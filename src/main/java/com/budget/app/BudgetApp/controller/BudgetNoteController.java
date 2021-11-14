@@ -9,18 +9,18 @@ import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
 
-@RestController("/v1")
+@RestController("/v1/budges_note")
 public class BudgetNoteController {
 
     @Autowired
     private BudgetNoteService noteService;
 
-    @GetMapping("/budges_note")
+    @GetMapping("/all")
     public List<BudgetNote> getAllBudgetNotes() {
         return noteService.getBudgetNotes();
     }
 
-    @GetMapping("/budges_note/{id}")
+    @GetMapping("/{id}")
     public BudgetNote getBudgetNote(@PathVariable("id") Long id) {
         return noteService.getBudgetNoteById(id);
     }

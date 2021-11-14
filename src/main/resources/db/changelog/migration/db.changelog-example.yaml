@@ -1,0 +1,56 @@
+databaseChangeLog:
+  - changeSet:
+      id: create-table-issuer
+      author: martinvalchev
+      preConditions:
+        - onFail: MARK_RAN
+          not:
+            tableExists:
+              tableName: issuer
+      changes:
+        - createTable:
+            columns:
+              - column:
+                  autoincrement: true
+                  constraints:
+                    nullable: false
+                    primaryKey: true
+                    primaryKeyName: issuer_pk
+                  name: id
+                  type: BIGINT
+              - column:
+                  constraints:
+                    nullable: false
+                  name: type
+                  type: VARCHAR(100)
+              - column:
+                  constraints:
+                    nullable: false
+                  name: first_name
+                  type: VARCHAR(50)
+              - column:
+                  constraints:
+                    nullable: false
+                  name: last_name
+                  type: VARCHAR(50)
+              - column:
+                  constraints:
+                    nullable: false
+                  name: email
+                  type: VARCHAR(100)
+              - column:
+                  constraints:
+                    nullable: false
+                  name: telephone
+                  type: VARCHAR(100)
+              - column:
+                  constraints:
+                    nullable: false
+                  name: address_1
+                  type: VARCHAR(100
+              - column:
+                  constraints:
+                    nullable: false
+                  name: address_2
+                  type: VARCHAR(100
+            tableName: issuer

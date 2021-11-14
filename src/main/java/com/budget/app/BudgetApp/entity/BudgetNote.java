@@ -18,6 +18,10 @@ public class BudgetNote {
     @Id
     @GeneratedValue(strategy= GenerationType.AUTO)
     private long id;
+
+    @ManyToOne
+    @JoinColumn(name = "budget_plan_id", referencedColumnName = "id")
+    private BudgetPlan budget;
     @Enumerated(EnumType.STRING)
     private NoteType type;
     private Double amount;
